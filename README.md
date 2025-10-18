@@ -12,10 +12,10 @@ Cela génère les fichiers jar dans le répertoire build/jar
 
 Ensuite on utilise la commande
 
-`java -jar Egrep.java [pattern] [cheminVersFichier]`
+`java -jar Egrep.jar [pattern] [cheminVersFichier]`
 
 On vous recommande de plutôt faire 
 
-`java -jar build/jar/Egrep.java [pattern] [cheminVersFichier]`
+`java -jar build/jar/Egrep.jar [pattern] [cheminVersFichier]`
 
 depuis le répertoire racine du projet pour éviter de descendre dans l'arborescence.
