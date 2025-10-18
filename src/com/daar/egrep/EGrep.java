@@ -1,5 +1,6 @@
 package com.daar.egrep;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -35,13 +36,15 @@ public class EGrep {
      *
      */
     public void runAndPrint() {
-        try {
+        try (BufferedReader reader = Files.newBufferedReader(filepath)) {
             LinkedHashSet<String> result = new LinkedHashSet<>();
             Automaton automaton = buildAutomaton();
+            String line;
             int lineCount = 1;
             // Est O(n) avec n la longueur du texte car on parcourt chaque caractère de chaque ligne
-            for (String line : Files.readAllLines(filepath)) {
-                for (char c : line.toCharArray()) {
+            while ((line = reader.readLine()) != null) {
+                for (int i = 0; i < line.length(); i++) {
+                    char c = line.charAt(i);
                     switch (automaton.readCharacter(c)) {
                         case KEEP -> {
                             if (automaton.isAccepted()) {
