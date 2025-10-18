@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.LinkedHashSet;
 import java.util.regex.Pattern;
 
-public class Test {
+public class EGrepWithPattern {
 
     public static void main(String[] args) {
         var pattern = Pattern.compile(args[0]);

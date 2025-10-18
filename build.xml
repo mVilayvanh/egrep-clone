@@ -5,7 +5,7 @@
     <property name="classes.dir"    value="${build.dir}/classes"/>
     <property name="jar.dir"        value="${build.dir}/jar"/>
     <property name="main.class"     value="com.daar.egrep.Main"/>
-    <property name="test.class"     value="com.daar.egrep.Test"/>
+    <property name="egrepWithPattern.class"     value="com.daar.egrep.EGrepWithPattern"/>
 
     <target name="init">
         <mkdir dir="${build.dir}"/>
@@ -27,16 +27,16 @@
                 <attribute name="Main-Class" value="${main.class}"/>
             </manifest>
         </jar>
-        <jar destfile="${jar.dir}/Test.jar" basedir="${classes.dir}">
+        <jar destfile="${jar.dir}/egrepWithPattern.jar" basedir="${classes.dir}">
             <manifest>
-                <attribute name="Main-Class" value="${test.class}"/>
+                <attribute name="Main-Class" value="${egrepWithPattern.class}"/>
             </manifest>
         </jar>
     </target>
 
     <target name="run" depends="jar">
         <java jar="${jar.dir}/EGrep.jar" fork="true">
-            <arg line="${args}"/>
+            <arg line="$-D{args}"/>
         </java>
     </target>
 
