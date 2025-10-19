@@ -1,0 +1,16 @@
+ressources/babylon.txt S(a|r|g)+on
+Egrep 199
+egrep 5
+EgrepJavaPatternMatcher 155
+ressources/bible.txt (miss|call)(ed)*
+Egrep 372
+egrep 7
+EgrepJavaPatternMatcher 361
+ressources/candide.txt what
+Egrep 168
+egrep 5
+EgrepJavaPatternMatcher 134
+ressources/miserable.txt power(ful|less)
+Egrep 309
+egrep 7
+EgrepJavaPatternMatcher 228
