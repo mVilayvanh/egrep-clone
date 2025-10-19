@@ -1,16 +1,16 @@
-ressources/babylon.txt S(a|r|g)+on
+ressources/babylon.txt S(a|r|g)+on (quelques matches sur texte moyen)
 Egrep 208
 egrep 5
 EgrepJavaPatternMatcher 152
-ressources/bible.txt (miss|call)(ed)*
+ressources/bible.txt (miss|call)(ed)* (beaucoup de matches sur texte long)
 Egrep 378
 egrep 8
 EgrepJavaPatternMatcher 343
-ressources/candide.txt what
+ressources/candide.txt what (quelques matches sur texte court)
 Egrep 160
 egrep 5
 EgrepJavaPatternMatcher 122
-ressources/miserable.txt power(ful|less)
+ressources/miserable.txt power(ful|less) (tres peu de matches sur texte long)
 Egrep 313
 egrep 7
 EgrepJavaPatternMatcher 210
