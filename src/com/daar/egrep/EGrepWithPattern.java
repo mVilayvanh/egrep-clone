@@ -1,5 +1,6 @@
 package com.daar.egrep;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -12,9 +13,10 @@ public class EGrepWithPattern {
         var pattern = Pattern.compile(args[0]);
         var filepath = Paths.get(args[1]);
         LinkedHashSet<String> result =  new LinkedHashSet<>();
-        try {
+        String line;
+        try (BufferedReader reader = Files.newBufferedReader(filepath)){
             int lineCount = 1;
-            for (String line : Files.readAllLines(filepath)) {
+            while ((line = reader.readLine()) != null) {
                 if (pattern.matcher(line).find()) result.add(lineCount + ":" + line);
                 lineCount++;
             }

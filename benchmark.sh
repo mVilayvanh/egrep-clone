@@ -2,7 +2,7 @@
 pattern=(
     "S(a|r|g)+on"
     "(miss|call)(ed)*"
-    "(w|W)hat"
+    "what"
     "power(ful|less)"
 )
 N=20
@@ -37,9 +37,9 @@ for file in ressources/*; do
     average_java1=$((total_java1 / N))
     average_egrep=$((total_egrep / N))
     average_java2=$((total_java2 / N))
-    echo "$file"
-    echo "Egrep $average_java1 ${pattern[j]}"
-    echo "egrep $average_egrep ${pattern[j]}"
-    echo "EgrepJavaPatternMatcher $average_java2 ${pattern[j]}"
+    echo "$file ${pattern[j]}"
+    echo "Egrep $average_java1"
+    echo "egrep $average_egrep"
+    echo "EgrepJavaPatternMatcher $average_java2"
     j=$(($j + 1))
 done
